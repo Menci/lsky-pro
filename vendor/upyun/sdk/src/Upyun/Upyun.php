@@ -241,9 +241,9 @@ class Upyun
         $req->request('DELETE', $path);
         if ($async) {
             $req->withHeader('x-upyun-async', 'true');
-        }
-        $res = $req->send();
-        return $res->getStatusCode() === 200;
+	}
+	$res = $req->send();
+        return $res->getStatusCode() === 200 || $res->getStatusCode() === 404;
     }
 
     /**

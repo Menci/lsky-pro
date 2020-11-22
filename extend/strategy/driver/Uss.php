@@ -90,7 +90,8 @@ class Uss implements Driver
     {
         try {
             $this->uss->delete($pathname);
-        } catch (\Exception $e) {
+	} catch (\Exception $e) {
+            if ($e instanceof \GuzzleHttp\Exception\ClientException && $e->getResponse()->getStatusCode() === 404) return true;
             $this->error = $e->getMessage();
             return false;
         }

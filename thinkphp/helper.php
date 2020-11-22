@@ -644,7 +644,6 @@ if (!function_exists('url')) {
      */
     function url($url = '', $vars = '', $suffix = true, $domain = false)
     {
-	// if ($url[0] == '/' && ) $url = '/image-upload' . $url;
         return Url::build($url, $vars, $suffix, $domain);
     }
 }

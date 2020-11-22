@@ -34,7 +34,7 @@ function captcha($id = '', $config = [])
  */
 function captcha_src($id = '')
 {
-    return Url::build('/image-upload/captcha' . ($id ? "/{$id}" : ''));
+    return Url::build('/captcha' . ($id ? "/{$id}" : ''));
 }
 
 /**
